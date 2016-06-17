@@ -1,0 +1,5 @@
+# Save files
+*.db
+
+# Cached
+__pycache__/
