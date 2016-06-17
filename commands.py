@@ -346,8 +346,8 @@ class SitCommandFactory():
 		))
 		return _set
 
-	def get_get(self):
-		_get = Command("get")
+	def get_list(self):
+		_get = Command("list")
 		_get.add_sub(SitCommand_GetTasks(
 			"tasks", self.sess
 		))
@@ -360,7 +360,7 @@ class SitCommandFactory():
 		s = SitCommand_Main("sit", self.sess)
 		s.add_sub(self.get_add())
 		s.add_sub(self.get_set())
-		s.add_sub(self.get_get())
+		s.add_sub(self.get_list())
 
 		s.add_sub(SitCommand_Go(
 			"go", self.sess
