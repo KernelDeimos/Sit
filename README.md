@@ -12,7 +12,7 @@ I have taken it upon myself to write this simple program, but there are a lot of
 
 Most importantly, this program needs some network connectivity. The idea (if you haven't caught on) is to be similar to Git, but for time managment rather than software - it would be ideal if people could "push" their hours to one server.
 
-I am also considering building a web interface. The decision remains whether starting a webserver will be built-in feature or a separate program. The web interface should enable people to use a "Sit repository" without installing Sit. (websockets?)
+I am also considering building a web interface. The decision remains whether starting a webserver will be a built-in feature or a separate program. The web interface should enable people to use a "Sit repository" without installing Sit. (websockets?)
 
 What works so far?
 ------------------
@@ -68,6 +68,11 @@ Features to be implemented
 - TODO Lists
 - 'history' command (like git log)
 - Any network connectivity at all
+- More shortcuts
+  - Starting Sit with "-u username"
+  - "set task projname:taskname"
+- Task brances?
+- User authentication
 
 Internal Workings
 -----------------
