@@ -56,6 +56,12 @@ Log activity
 	sit:code> status
 	# does not output anything
 
+A **very** basic history command
+
+	$ ./sit new_exapmle.db
+	site:code> history
+	Sit down for a bit: 0.01 hours
+
 Going out of the Sit console
 
 	$ ./sit new_example.db
@@ -71,7 +77,7 @@ Features to be implemented
 - More shortcuts
   - Starting Sit with "-u username"
   - "set task projname:taskname"
-- Task brances?
+- Task branches?
 - User authentication
 
 Internal Workings

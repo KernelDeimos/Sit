@@ -274,6 +274,22 @@ class SitCommand_Status(SitCommand):
 			print('Ready since '+str(ds), end='')
 			print(': '+hstr+' hours')
 
+class SitCommand_History(SitCommand):
+	def set_parameters(self):
+		self.minArgs = 0
+
+	def perform_action(self, args):
+		db = self.sess.get_db()
+		projname = self.sess.require('project')
+		taskname = self.sess.require('task')
+		data = db.fetch_past_activities(projname, taskname)
+
+		# Output history
+		for row in data:
+			hours = row['seconds'] / 60.0 / 60.0
+			hstr = "{0:.2f}".format(round(hours,2))
+			print(row['name']+': '+hstr+' hours')
+
 class SitCommand_Commit(SitCommand):
 	def set_parameters(self):
 		self.minArgs = 1
@@ -357,6 +373,9 @@ class SitCommandFactory():
 		))
 		s.add_sub(SitCommand_Status(
 			"status", self.sess
+		))
+		s.add_sub(SitCommand_History(
+			"history", self.sess
 		))
 
 		return s
