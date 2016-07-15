@@ -286,9 +286,9 @@ class SitCommand_History(SitCommand):
 
 		# Output history
 		for row in data:
-			hours = row['seconds'] / 60.0 / 60.0
-			hstr = "{0:.2f}".format(round(hours,2))
-			print(row['name']+': '+hstr+' hours')
+			durr = datetime.timedelta(seconds=row['seconds'])
+			hstr = str(durr)
+			print(row['name']+': '+hstr)
 
 class SitCommand_Commit(SitCommand):
 	def set_parameters(self):
