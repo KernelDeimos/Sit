@@ -6,7 +6,7 @@ What is this?
 I needed a simple program to keep track of my hours for freelance work, and I couldn't find anything that suited the requirements of what I had envisioned.
 
 I have taken it upon myself to write this simple program, but there are a lot of things I'm going to need some help with from the open source community.
-- The architecture is "not horrible" but it has a long way to go.
+- The architecture is decent but it has a long way to go.
 - There are many features I'm looking to add
 - I have no idea of the proper way to put this together for package managers.
 
@@ -20,18 +20,20 @@ What works so far?
 Initial setup:
 
 	$ ./sit new_example.db
+	sit: Executed table generation
 	NULL> add user eric
-	Added user 'eric'
+	Added user `eric`
 	NULL> set user eric
-	Set user to 'eric'
+	Set user to `eric`
 	NULL> add project sit
-	Added project 'sit'
+	Added project `sit`
 	NULL> set project sit
-	Set project to 'sit'
+	Set project to `sit`
 	sit> add task code
-	Added task 'code' to 'sit'
+	Added task `code` to `sit`
 	sit> set task code
-	Set task to 'code'
+	Set task to `code`
+	sit:code>
 
 Begin recording work hours
 
@@ -39,7 +41,7 @@ Begin recording work hours
 	sit:code> go
 	sit:code> status
 	Currently tracking...
-	Tracking since 2016-06-17 13:17:39: 0.00 hours
+	Tracking since 2016-08-07 16:40:24: 0.00 hours
 
 Stop recording work hours
 
@@ -47,7 +49,7 @@ Stop recording work hours
 	sit:code> done
 	sit:code> status
 	Ready to log...
-	Ready since 2016-06-17 13:18:20: 0.01 hours
+	Ready since 2016-08-07 16:41:01: 0.01 hours
 
 Log activity
 
@@ -56,11 +58,12 @@ Log activity
 	sit:code> status
 	# does not output anything
 
-A **very** basic history command
+History command
 
 	$ ./sit new_example.db
 	sit:code> history
-	Sit down for a bit: 0.01 hours
+	-------- 2016-08-07
+	Sit down for a bit: 0:00:36
 
 Going out of the Sit console
 
@@ -71,14 +74,13 @@ Going out of the Sit console
 
 Features to be implemented
 --------------------------
-- TODO Lists
-- 'history' command (like git log)
-- Any network connectivity at all
+- TODO Lists for projects and tasks
+- Parameters for history command
 - More shortcuts
   - Starting Sit with "-u username"
-  - "set task projname:taskname"
-- Task branches?
-- User authentication
+  - Allow "set task projname:taskname"
+- Categorical organization of tasks
+- Remote repositories and user authentication
 
 Internal Workings
 -----------------
