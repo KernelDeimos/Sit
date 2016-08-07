@@ -51,21 +51,21 @@ Stop recording work hours
 	Ready to log...
 	Ready since 2016-08-07 16:41:01: 0.01 hours
 
-Log activity
+Log an activity
 
 	$ ./sit new_example.db
 	sit:code> log "Sit down for a bit"
 	sit:code> status
 	# does not output anything
 
-History command
+View logged activities
 
 	$ ./sit new_example.db
 	sit:code> history
 	-------- 2016-08-07
 	Sit down for a bit: 0:00:36
 
-Going out of the Sit console
+Go out of the Sit console
 
 	$ ./sit new_example.db
 	sit:code> exit
