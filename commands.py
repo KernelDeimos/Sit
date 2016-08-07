@@ -155,12 +155,15 @@ class SitCommandFactory():
 	def get_sit(self):
 		s = self.main
 		
+		# Actions with subcommands
 		self.add_action(add_action)
 		self.add_action(set_action)
 		self.add_action(list_action)
 
+		# Actions without subcommands
 		self.add_action(status_action)
 
+		# Actions not yet refactored
 		s.add_sub(SitCommand_Go(
 			"go", self.sess
 		))
@@ -173,5 +176,8 @@ class SitCommandFactory():
 		s.add_sub(SitCommand_History(
 			"history", self.sess
 		))
+
+		# Actions not yet implemented
+		self.add_action(drop_action)
 
 		return s
