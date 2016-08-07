@@ -284,8 +284,16 @@ class SitCommand_History(SitCommand):
 		taskname = self.sess.require('task')
 		data = db.fetch_past_activities(projname, taskname)
 
+		day_heading = None
+
 		# Output history
 		for row in data:
+			day_dt = datetime.datetime.fromtimestamp(row['start'])
+			day_str = day_dt.strftime("%Y-%m-%d")
+			if day_str != day_heading:
+				day_heading = day_str
+				print('-------- '+day_heading)
+
 			durr = datetime.timedelta(seconds=row['seconds'])
 			hstr = str(durr)
 			print(row['name']+': '+hstr)

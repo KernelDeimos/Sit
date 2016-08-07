@@ -256,14 +256,29 @@ class SitDatabase:
 			name = row[0]
 			activ_id = row[1]
 			inputs = (projname, taskname, activ_id)
+			seconds = 0
+			begints = -1
 			# Fetch all hours within this activity
-			c.execute('''SELECT SUM(end_time - start_time) FROM hours
+			c_hours = self.conn.cursor()
+			c_hours.execute('''SELECT start_time, end_time FROM hours
 				WHERE projname=?
 				AND taskname=?
 				AND activ_id=?''', inputs)
-			seconds = int(c.fetchone()[0])
+			for hour in c_hours.fetchall():
+				start_time = hour[0]
+				end_time   = hour[1]
+				seconds += int(end_time - start_time)
+				if start_time < begints or begints == -1:
+					begints = start_time
+			# Fetch all hours within this activity
+			# c.execute('''SELECT SUM(end_time - start_time) FROM hours
+			# 	WHERE projname=?
+			# 	AND taskname=?
+			# 	AND activ_id=?''', inputs)
+			# seconds = int(c.fetchone()[0])
 			act = {}
 			act['name'] = name
 			act['seconds'] = seconds
+			act['start'] = begints
 			activities.append(act);
 		return activities
