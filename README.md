@@ -58,8 +58,8 @@ Log activity
 
 A **very** basic history command
 
-	$ ./sit new_exapmle.db
-	site:code> history
+	$ ./sit new_example.db
+	sit:code> history
 	Sit down for a bit: 0.01 hours
 
 Going out of the Sit console
@@ -86,8 +86,7 @@ Saves data in an sqlite database using the sqlite1 module
 
 Contributing
 ------------
-If you only send a pull request, I can't guarentee I'll accept it (though I may).
 
-I recommend that you send an email (eric.alex.dube@gmail.com) letting me know what you want to add to the program, and maybe a bried explanation of how you intend to implement it.
+I recommend that you send an email (eric.alex.dube@gmail.com) letting me know what you want to add to the program, and maybe a brief explanation of how you intend to implement it.
 
 If this project gains enough interest I'll set up an IRC channel for contributors.
