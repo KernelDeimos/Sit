@@ -1,6 +1,16 @@
 Sit - Time Configuration Management
 ===================================
 
+Discontinued Version
+--------------------
+I still think this is a great idea, but I don't plan to continue it from this source code.
+When I find the time, I am going to make a new repository and start a new implementation
+using `node.js`.
+
+The new repository is because I would like to change the structure of the program's source code.
+
+The switch to `node.js` is because `npm` and `express-js` make much of what I would like to do trivial.
+
 What is this?
 -------------
 I needed a simple program to keep track of my hours for freelance work, and I couldn't find anything that suited the requirements of what I had envisioned.
